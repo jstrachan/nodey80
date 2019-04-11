@@ -1,0 +1,112 @@
+Step: build-step-credential-initializer-frm65:
+
+{"level":"warn","ts":1555009273.2570193,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1555009273.257688,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-*********-virtualknative-master-4m8tr:
+
+{"level":"warn","ts":1555009274.3380084,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1555009275.4602761,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/*********/virtualknative\" @ \"v0.0.1\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-setup-**-git-credentials:
+
+Generated Git credentials file /workspace/xdg_config/git/credentials
+Step: build-step-build-npm-install:
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.411s
+found 0 vulnerabilities
+
+Step: build-step-build-npm-test:
+
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+Step: build-step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E0411 19:01:24.685773       9 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+ERROR: logging before flag.Parse: E0411 19:01:24.692222       9 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+2019/04/11 19:01:24 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0001] Downloading base image node:9-slim           
+2019/04/11 19:01:25 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] ENV PORT 8080                                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] EXPOSE 8080                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] WORKDIR /usr/src/app                         
+[36mINFO[0m[0002] cmd: workdir                                 
+[36mINFO[0m[0002] Changed working directory to /usr/src/app    
+[36mINFO[0m[0002] Creating directory /usr/src/app              
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] COPY . .                                     
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] CMD ["npm", "start"]                         
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+2019/04/11 19:01:27 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2019/04/11 19:01:27 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2019/04/11 19:01:27 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2019/04/11 19:01:27 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2019/04/11 19:01:27 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2019/04/11 19:01:30 pushed blob: sha256:3be9ae217880df4bb87d4a5aa42d1b889fbdaa11ec19b7a1909a353201e831c3
+2019/04/11 19:01:30 pushed blob: sha256:4f6ff63a6c563af42a65bd2c491b4c470665cd42943a1e30f9f99eca8f2dcd26
+2019/04/11 19:01:31 pushed blob: sha256:ac87ffcc9f1c27e0d3fd47173ee4c573d8a69b28766ba61eb5a70a952390c6c5
+2019/04/11 19:01:32 gcr.io/**-development/virtualknative:0.0.1: digest: sha256:813070f1b2b625c211b7b5509b79c5332991f753ba2eab4d030923e19e7fb08b size: 1404
+Step: build-step-build-post-build:
+
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+Step: build-step-promote-changelog:
+
+Converted /workspace/source/charts/virtualknative to an unshallow repository
+Generating change log from git ref 35c091c22d2e5c4ea002312405f67b8b553f2197 => 43999c017803a01d29915179513a3e78a727cd69
+Failed to enrich commits with issues: User.jenkins.io "-0" is invalid: metadata.name: Invalid value: "-0": a DNS-1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+Failed to enrich commits with issues: User.jenkins.io "-0" is invalid: metadata.name: Invalid value: "-0": a DNS-1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')
+Finding issues in commit messages using git format
+No release found for *********/virtualknative and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/*********/virtualknative/releases/tag/v0.0.1
+generated: /workspace/source/charts/virtualknative/templates/release.yaml
+Created Release virtualknative-0-0-1 resource in namespace **
+Updating PipelineActivity *********-virtualknative-master-1 with version 0.0.1
+Updated PipelineActivities *********-virtualknative-master-1 with release notes URL: https://github.com/*********/virtualknative/releases/tag/v0.0.1
+Step: build-step-promote-helm-release:
+
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x http://chartmuseum.jenkins-x.io
+Successfully added Helm repository jenkins-x.
+Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository releases.
+No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file virtualknative-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+Step: build-step-promote-**-promote:
+
+prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app virtualknative version 0.0.1 to namespace **-staging
+Created Pull Request: https://github.com/*********/environment-*********-t1-staging/pull/2
+
+Pull Request https://github.com/*********/environment-*********-t1-staging/pull/2 is merged at sha 56b7908bf39887fafd92a9f7d649c4a2e84739a8
+Pull Request merged but we are not waiting for the update pipeline to complete!
+Could not find the service URL in namespace **-staging for names virtualknative, **-virtualknative, **-staging-virtualknative
+Step: build-step-source-mkdir-*********-virtualknative-master-zqp9c:
+
+{"level":"warn","ts":1555009377.1272292,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1555009377.1636882,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/from-build-pack/workspace\""}
+Step: build-step-source-copy-*********-virtualknative-master-k7r9d:
+
+{"level":"warn","ts":1555009378.1937637,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1555009378.2076058,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/from-build-pack/workspace\""}
