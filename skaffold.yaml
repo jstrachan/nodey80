@@ -1,0 +1,30 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  - image: changeme
+    context: .
+    docker: {}
+  tagPolicy:
+    envTemplate:
+      template: '{{.DOCKER_REGISTRY}}/jstrachan/nodey80:{{.VERSION}}'
+  local: {}
+deploy:
+  kubectl: {}
+profiles:
+- name: dev
+  build:
+    artifacts:
+    - docker: {}
+    tagPolicy:
+      envTemplate:
+        template: '{{.DOCKER_REGISTRY}}/jstrachan/nodey80:{{.DIGEST_HEX}}'
+    local: {}
+  deploy:
+    helm:
+      releases:
+      - name: nodey80
+        chartPath: charts/nodey80
+        setValueTemplates:
+          image.repository: '{{.DOCKER_REGISTRY}}/jstrachan/nodey80'
+          image.tag: '{{.DIGEST_HEX}}'
